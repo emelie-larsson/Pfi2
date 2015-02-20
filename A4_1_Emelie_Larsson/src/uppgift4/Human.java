@@ -2,12 +2,12 @@ package uppgift4;
 
 public class Human {
 
-	private Dog dog;
+	private Dog dog;				//variabler
 	private String name;
 	private String error;
 	
 	
-	public Human (String name){
+	public Human (String name){		// konstruktor
 	if(name.length()>3){
 		this.name=name;
 	}else{
@@ -18,7 +18,7 @@ public class Human {
 	
 	
 
-public String getName(){
+public String getName(){ 				//metoder 
 return this.name;
 
 }

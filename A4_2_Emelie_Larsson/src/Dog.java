@@ -1,8 +1,7 @@
 
 
 public class Dog extends Mammal{
-
-	private boolean Stupid;
+ boolean Stupid;		//instansvariabel
 	
 	
 	public Dog(String LatinName, int gestationTime, boolean Stupid){
@@ -12,7 +11,7 @@ public class Dog extends Mammal{
 		
 		
 	}
-	public Dog(String LatinName, int gestationTime, boolean Stupid, String FriendlyName){
+	public Dog(String LatinName, int gestationTime, boolean Stupid, String FriendlyName){ //konstruktor
 		super(LatinName, gestationTime);
 		this.Stupid=Stupid;
 		super.setFriendlyName(FriendlyName);
@@ -20,12 +19,12 @@ public class Dog extends Mammal{
 		
 		
 	}
-	public boolean isStupid(){
+	public boolean isStupid(){ // metod
 		return Stupid;
 		
 	}
 	
-	public String getInfo() {
+	public String getInfo() { // metod
 		String notStupid = " is not stupid";
 		String isStupid = " is stupid";
 		String info = " The dog (" + this.getLatinName() + ") " + getFriendlyName() + " has the gestation time " + this.getGestationTime() + " months, \n and "; 

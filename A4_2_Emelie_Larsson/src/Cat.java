@@ -3,13 +3,13 @@ public class Cat extends Mammal{
 	
 	private int NumberOfLives;
 	
-	public Cat(String LatinName, int GestationTime, int NumberOfLives) {
+	public Cat(String LatinName, int GestationTime, int NumberOfLives) { // konstruktor
 		super(LatinName, GestationTime);
 		this.NumberOfLives = NumberOfLives;
 	
 	
 	}
-	public int getNumberOfLives(){
+	public int getNumberOfLives(){ // metoder
 		return this.NumberOfLives;
 		
 	

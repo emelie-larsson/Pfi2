@@ -1,14 +1,14 @@
 
 public class Snake extends Animal{
 
-	private boolean Poisonous; 
+	private boolean Poisonous; //instansvariabel 
 	
-	public Snake(String LatinName, boolean Poisonous) {
+	public Snake(String LatinName, boolean Poisonous) {  // konstruktor
 		super(LatinName);
 		this.Poisonous=Poisonous;
 		
 	}
-	public boolean isPoisonous(){
+	public boolean isPoisonous(){ // metod
 	return Poisonous;
 	
 }
