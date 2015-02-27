@@ -13,11 +13,12 @@ public class TestClass {
 
 	public static void main(String[] args) {
 		String searchURL = Constants.getURL("80000","81216",20); //Malmö C = 80000,  Lund C, 81216 Malmö Gatorg 80100, Hässleholm C 93070
+		// 8000 står för Malmö C, 81216 står för Lund C, 20 står för 
 		System.out.println(searchURL);
 		System.out.println("// Results when searching:");
 		
 		Journeys journeys = Parser.getJourneys(searchURL);
-		for (Journey journey : journeys.getJourneys()) {
+		for (Journey journey : journeys.getJourneys()) {	// Hämtar resalternativ och detaljer om resorna. 
 			System.out.print(journey.getStartStation()+" - ");
 			System.out.print(journey.getEndStation());
 			String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY)+":"+journey.getDepDateTime().get(Calendar.MINUTE);
@@ -25,8 +26,8 @@ public class TestClass {
 		} 
 		
 	   System.out.println("// Stations when searching for stations containing \"Malm\"");
-		ArrayList<Station> searchStations = new ArrayList<Station>(); 
-		searchStations.addAll(Parser.getStationsFromURL("Malm"));
+		ArrayList<Station> searchStations = new ArrayList<Station>(); // Lista med alla stationer
+		searchStations.addAll(Parser.getStationsFromURL("Malm")); // Fyller i alla tillgängliga stationsalternativ
 		for (Station s: searchStations){
 			System.out.println(s.getStationName() +" number:" +s.getStationNbr());
 		}
