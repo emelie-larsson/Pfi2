@@ -23,7 +23,7 @@ public class Parser {
   	 * http://www.labs.skanetrafiken.se/v2.2/querystation.asp?inpPointfr=malmö
   	 * More information
   	 * @param serachStart string to search for
-  	 * @return list of stations that fulfils the search criteria. 
+  	 * @return list of stations that fulfills the search criteria. 
   	 * Always returns a number of central stations like Malmö Copenhagen etc
   	 * */
 	public static List<Station> getStationsFromURL(String searchStart){
@@ -54,7 +54,7 @@ public class Parser {
   	 * Use this URL to test from a browser:
   	 * http://www.labs.skanetrafiken.se/v2.2/resultspage.asp?cmdaction=next&selPointFr=malmö%20C|80000|0&selPointTo=landskrona|82000|0&LastStart=2015-02-24 16:38
   	 * More information
-  	 * @param serachURL string to search for
+  	 * @param searchURL string to search for
   	 * @return a Jourenys object that contains information on journeys from a station to another specified station. 
   	 * */
 	public static Journeys getJourneys(String searchURL){
@@ -171,11 +171,15 @@ public class Parser {
 				//Continue with all other elements in the Line node.......
 				//....
 				
+				String toStationName = parser.getValue(e, "Towards"); 
+				if(debug){System.out.println("toStationName: "+ toStationName);}
+				
 				//Then we got one Line lets create a line object and add it to Lines
 				Line l = new Line();
 				l.setDepTime(depTime);
 				l.setLine(lineNo);
 				l.setDepTimeDeviation(depTimeDeviation);
+				l.setDestination(toStationName);
 				lines.addLine(l);
 				//Ok next Line element
 			}		

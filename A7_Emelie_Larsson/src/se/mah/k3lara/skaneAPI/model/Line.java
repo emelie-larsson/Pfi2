@@ -6,7 +6,10 @@ public class Line {
 	private String line;
 	private Calendar depTime;
 	private String depTimeDeviation;
-	public Line() {
+	private String toStationName;
+	public Line(){
+	
+	
 	}
 	public String getLine() {
 		return line;
@@ -25,6 +28,14 @@ public class Line {
 	}
 	public void setDepTimeDeviation(String depTimeDeviation) {
 		this.depTimeDeviation = depTimeDeviation;
+	}
+	
+	public String getDestination(){
+		return toStationName;
+	}
+	
+	public void setDestination(String toStationName){
+		this.toStationName = toStationName;
 	}
 	
 	//More methods here for the rest of the tags
